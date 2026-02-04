@@ -38,7 +38,7 @@ export function getKiroDbPath(): string {
   }
 }
 
-async function getKiroToken(): Promise<KiroToken | null> {
+export async function getKiroToken(): Promise<KiroToken | null> {
   const dbPath = getKiroDbPath()
   const file = Bun.file(dbPath)
   if (!(await file.exists())) return null
